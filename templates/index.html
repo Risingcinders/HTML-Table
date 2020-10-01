@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>REPLACE THIS</title>
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('static', filename='css/foundation.css') }}"
+        />
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>It's A Title</h1>
+            <table id="main">
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Full Name</th>
+                </thead>
+                <tbody>
+                {% for i in range(usertable|length) %}
+                <tr>
+                    <td>{{ usertable[i]['first_name'] }}
+
+                    </td>
+                    <td>{{ usertable[i].last_name }}</td>
+                    <td>{{ usertable[i]['first_name'] + ' '+ usertable[i].last_name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+        <!-- <img src="{{ url_for('static', filename='img/my_img.png') }}"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+            type="text/javascript"
+            src="{{ url_for('static', filename='js/script.js') }}"
+        ></script>
+    </body>
+</html>
